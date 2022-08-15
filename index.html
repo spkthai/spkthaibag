@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <title>กำลังเข้าสู่ Form</title>
+    <style>
+        .centerScreen {
+            margin-top: 20;
+            margin-right: auto;
+            margin-bottom: 20;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body style="background-color: powderblue;">
+    <div class="centerScreen">
+        <center>
+            <img src="https://drive.google.com/uc?id=1mEyShWSX9rPf4klIDeMTlHAOc4BsySFK" height="200px" , width="200px" />
+            <h1>
+                กำลังเข้าสู่ Google Form กรุณารอซักครู่
+            </h1>
+        </center>
+    </div>
+</body>
+<footer>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        /// Config Your LIFF ID Here
+        const liffId = "1657388867-bqZYjlPM";
+        /// Config Your LIFF ID Here
+        liff.ready
+            .then(() => {
+                if (liff.isLoggedIn()) {
+                    return liff.getProfile();
+                } else {
+                    liff.login({
+                        redirectUri: "https://github.com/spkthai/spklifftest.git",
+                    });
+                }
+            })
+            .then((profile) => {
+                window.location.replace(
+                    `https://docs.google.com/forms/d/e/1FAIpQLSc8rCN-y5qfzME8VqTUUmDWSyabvw0XzXDMyQqtd3e-XPP5mw/viewform?
+            usp=pp_url
+            &entry.1120450161=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A
+            &entry.32591038=${profile.userId}
+            &entry.914809996=${profile.displayName}
+            &entry.1682278055=${profile.pictureUrl}
+            &entry.1098356252=${profile.statusMessage}`
+                );
+            });
+        liff.init({
+                liffId: liffId,
+            },
+            () => {},
+            (err) => {
+                window.alert(err);
+            }
+        );
+    </script>
+</footer>
+
+</html>
